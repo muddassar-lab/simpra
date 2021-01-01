@@ -20,6 +20,16 @@ return /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/dom/class.ts":
+/*!**************************!*\
+  !*** ./src/dom/class.ts ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony import */ var _utils_methodCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/methodCheck */ \"./src/utils/methodCheck.ts\");\n/* harmony import */ var _utils_element_select__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/element_select */ \"./src/utils/element_select.ts\");\n/* harmony import */ var _utils_classMethod__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils/classMethod */ \"./src/utils/classMethod.ts\");\n\r\n\r\n\r\nconst Class = (selector, method, className) => {\r\n    const method_result = (0,_utils_methodCheck__WEBPACK_IMPORTED_MODULE_0__.default)(method, [\"add\", \"remove\", \"toggle\"]);\r\n    if (method_result == true) {\r\n        if (typeof className == \"string\") {\r\n            if (typeof selector == \"string\" || typeof selector == \"object\") {\r\n                const element = (0,_utils_element_select__WEBPACK_IMPORTED_MODULE_1__.default)(selector);\r\n                if (typeof element == \"object\") {\r\n                    element.forEach((element_single) => {\r\n                        (0,_utils_classMethod__WEBPACK_IMPORTED_MODULE_2__.default)(element_single, method, className);\r\n                    });\r\n                }\r\n                else {\r\n                    console.error(\"element is undefined\");\r\n                }\r\n            }\r\n            else {\r\n                console.error(\"Selector paramter should be string or NodeList object\");\r\n            }\r\n        }\r\n        else {\r\n            console.error(`className parameter should be string.The paramter you passed is ${className}`);\r\n        }\r\n    }\r\n};\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Class);\r\n\n\n//# sourceURL=webpack://simpra/./src/dom/class.ts?");
+
+/***/ }),
+
 /***/ "./src/dom/display.ts":
 /*!****************************!*\
   !*** ./src/dom/display.ts ***!
@@ -46,7 +56,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \***************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony import */ var _utils_element_select__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/element_select */ \"./src/utils/element_select.ts\");\n\r\nconst setCss = (elements, property, value) => {\r\n    const csspropertyset = (element, property, value) => {\r\n        element.style.setProperty(property, value);\r\n    };\r\n    const propertycheck = (element, property, value) => {\r\n        if (typeof property == \"string\" && typeof value == \"string\") {\r\n            csspropertyset(element, property, value);\r\n        }\r\n        else if (typeof property == \"object\" && value == undefined) {\r\n            for (const [key, value] of Object.entries(property))\r\n                csspropertyset(element, key, value);\r\n        }\r\n    };\r\n    const elements_check = (0,_utils_element_select__WEBPACK_IMPORTED_MODULE_0__.default)(elements);\r\n    if (elements_check != undefined) {\r\n        elements_check.forEach(function (element) {\r\n            propertycheck(element, property, value);\r\n        });\r\n    }\r\n    else {\r\n        console.error(\"element is undefined\");\r\n    }\r\n};\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (setCss);\r\n\n\n//# sourceURL=webpack://simpra/./src/dom/setcss.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony import */ var _utils_element_select__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/element_select */ \"./src/utils/element_select.ts\");\n/* harmony import */ var _utils_properycheck__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/properycheck */ \"./src/utils/properycheck.ts\");\n\r\n\r\nconst setCss = (elements, property, value) => {\r\n    const elements_check = (0,_utils_element_select__WEBPACK_IMPORTED_MODULE_0__.default)(elements);\r\n    if (elements_check != undefined) {\r\n        elements_check.forEach(function (element) {\r\n            (0,_utils_properycheck__WEBPACK_IMPORTED_MODULE_1__.default)(element, property, value);\r\n        });\r\n    }\r\n    else {\r\n        console.error(\"element is undefined\");\r\n    }\r\n};\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (setCss);\r\n\n\n//# sourceURL=webpack://simpra/./src/dom/setcss.ts?");
 
 /***/ }),
 
@@ -56,7 +66,27 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"select\": () => /* reexport safe */ _dom_select__WEBPACK_IMPORTED_MODULE_0__.default,\n/* harmony export */   \"display\": () => /* reexport safe */ _dom_display__WEBPACK_IMPORTED_MODULE_1__.default\n/* harmony export */ });\n/* harmony import */ var _dom_select__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dom/select */ \"./src/dom/select.ts\");\n/* harmony import */ var _dom_display__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dom/display */ \"./src/dom/display.ts\");\n\r\n\r\n\r\n\n\n//# sourceURL=webpack://simpra/./src/index.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"select\": () => /* reexport safe */ _dom_select__WEBPACK_IMPORTED_MODULE_0__.default,\n/* harmony export */   \"display\": () => /* reexport safe */ _dom_display__WEBPACK_IMPORTED_MODULE_1__.default,\n/* harmony export */   \"setCss\": () => /* reexport safe */ _dom_setcss__WEBPACK_IMPORTED_MODULE_2__.default,\n/* harmony export */   \"Class\": () => /* reexport safe */ _dom_class__WEBPACK_IMPORTED_MODULE_3__.default\n/* harmony export */ });\n/* harmony import */ var _dom_select__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dom/select */ \"./src/dom/select.ts\");\n/* harmony import */ var _dom_display__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dom/display */ \"./src/dom/display.ts\");\n/* harmony import */ var _dom_setcss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./dom/setcss */ \"./src/dom/setcss.ts\");\n/* harmony import */ var _dom_class__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dom/class */ \"./src/dom/class.ts\");\n\r\n\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack://simpra/./src/index.ts?");
+
+/***/ }),
+
+/***/ "./src/utils/classMethod.ts":
+/*!**********************************!*\
+  !*** ./src/utils/classMethod.ts ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\nconst classMethod = (element, method, ClassName) => {\r\n    if (method == \"add\") {\r\n        console.log(element.classList);\r\n        element.classList.add(ClassName);\r\n    }\r\n    else if (method == \"remove\") {\r\n        element.classList.remove(ClassName);\r\n    }\r\n    else if (method == \"toggle\") {\r\n        element.classList.toggle(ClassName);\r\n    }\r\n};\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (classMethod);\r\n\n\n//# sourceURL=webpack://simpra/./src/utils/classMethod.ts?");
+
+/***/ }),
+
+/***/ "./src/utils/csspropertyset.ts":
+/*!*************************************!*\
+  !*** ./src/utils/csspropertyset.ts ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\nconst csspropertyset = (element, property, value) => {\r\n    element.style.setProperty(property, value);\r\n};\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (csspropertyset);\r\n\n\n//# sourceURL=webpack://simpra/./src/utils/csspropertyset.ts?");
 
 /***/ }),
 
@@ -77,6 +107,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\nconst methodCheck = (method, methodList) => {\r\n    if (typeof method == \"string\") {\r\n        if (Array.isArray(methodList)) {\r\n            if (methodList.includes(method)) {\r\n                return true;\r\n            }\r\n            else {\r\n                return false;\r\n            }\r\n        }\r\n        else {\r\n            console.error(`methodList paramter should be an array.The methodList you passed is ${methodList}`);\r\n            return false;\r\n        }\r\n    }\r\n    else {\r\n        console.error(`method parameter should be string.The method you passed is ${method}`);\r\n        return false;\r\n    }\r\n};\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (methodCheck);\r\n\n\n//# sourceURL=webpack://simpra/./src/utils/methodCheck.ts?");
+
+/***/ }),
+
+/***/ "./src/utils/properycheck.ts":
+/*!***********************************!*\
+  !*** ./src/utils/properycheck.ts ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony import */ var _utils_csspropertyset__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/csspropertyset */ \"./src/utils/csspropertyset.ts\");\n\r\nconst propertycheck = (element, property, value) => {\r\n    if (typeof property == \"string\" && typeof value == \"string\") {\r\n        (0,_utils_csspropertyset__WEBPACK_IMPORTED_MODULE_0__.default)(element, property, value);\r\n    }\r\n    else if (typeof property == \"object\" && value == undefined) {\r\n        for (const [key, value] of Object.entries(property))\r\n            (0,_utils_csspropertyset__WEBPACK_IMPORTED_MODULE_0__.default)(element, key, value);\r\n    }\r\n};\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (propertycheck);\r\n\n\n//# sourceURL=webpack://simpra/./src/utils/properycheck.ts?");
 
 /***/ })
 
