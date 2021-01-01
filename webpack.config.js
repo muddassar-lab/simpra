@@ -11,6 +11,7 @@ module.exports = {
     ],
   },
   output: {
+    globalObject: "this",
     library: "simpra",
     libraryTarget: "umd",
     filename: "simpra.js",
