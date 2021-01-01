@@ -4,7 +4,10 @@
   "description": "A javascript library for simple practices.",
   "main": "dist/simpra.js",
   "types": "./types/index.d.ts",
-  "files": ["dist/simpra.js", "types/"],
+  "files": [
+    "dist/simpra.js",
+    "types/"
+  ],
   "scripts": {
     "build": "webpack",
     "watch": "webpack -w"
@@ -25,6 +28,7 @@
   "homepage": "https://github.com/muddassar-lab/simpra#readme",
   "devDependencies": {
     "ts-loader": "^8.0.13",
+    "typedoc": "^0.20.7",
     "typescript": "^4.1.3",
     "webpack": "^5.11.1",
     "webpack-cli": "^4.3.1"

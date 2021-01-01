@@ -1,1 +1,1 @@
-A javasscript library for simple practices.Written in modern typescript.
+Simprajs is a javascript library written in TypeScript.
