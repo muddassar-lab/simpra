@@ -1,8 +1,9 @@
 {
-  "name": "simpra",
+  "name": "simprajs",
   "version": "1.0.0",
   "description": "A javascript library for simple practices.",
-  "main": "src/index.ts",
+  "main": "dist/simpra.js",
+  "types": "./types/index.d.ts",
   "scripts": {
     "build": "webpack",
     "watch": "webpack -w"
