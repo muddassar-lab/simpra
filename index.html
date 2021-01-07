@@ -12,7 +12,8 @@
 </body>
 <script src="./dist/simpra.js"></script>
 <script>
-    simpra.display("show", 'div');
+    simpra.setCss("div", "color", "red");
+    console.log(simpra.getCss('#main1', ["color"]));
 </script>
 
 </html>

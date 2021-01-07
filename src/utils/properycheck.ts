@@ -1,4 +1,4 @@
-import csspropertyset from "../utils/csspropertyset";
+import csspropertyset from "./csspropertyset";
 const propertycheck = (
   element: HTMLElement,
   property: string | object,
