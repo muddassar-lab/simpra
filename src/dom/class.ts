@@ -4,19 +4,40 @@ import classMethod from "../utils/classMethod";
 const Class = (
   selector: string | NodeListOf<HTMLElement>,
   method: string,
-  className: string
-) => {
-  const method_result = methodCheck(method, ["add", "remove", "toggle"]);
+  className?: string
+): Array<object> | undefined => {
+  const method_result = methodCheck(method, ["add", "remove", "toggle", "get"]);
   if (method_result == true) {
-    if (typeof className == "string") {
+    if (
+      typeof className == "string" ||
+      (method == "get" && typeof className == "undefined")
+    ) {
       if (typeof selector == "string" || typeof selector == "object") {
         const element: NodeListOf<HTMLElement> | undefined = element_select(
           selector
         );
         if (typeof element == "object") {
-          element.forEach((element_single: HTMLElement) => {
-            classMethod(element_single, method, className);
-          });
+          if (method == "get") {
+            let ClassListArray: Array<object> = [];
+            interface classObjectConstructor {
+              Element: HTMLElement;
+              ClassList: DOMTokenList | undefined;
+            }
+            element.forEach((element_single: HTMLElement) => {
+              let classList = classMethod(element_single, method, className);
+              let classobject: classObjectConstructor = {
+                Element: element_single,
+                ClassList: classList,
+              };
+              ClassListArray.push(classobject);
+            });
+            return ClassListArray;
+          } else {
+            element.forEach((element_single: HTMLElement) => {
+              classMethod(element_single, method, className);
+            });
+            return undefined;
+          }
         } else {
           console.error("element is undefined");
         }

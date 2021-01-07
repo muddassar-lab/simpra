@@ -4,4 +4,5 @@ import display from "./dom/display";
 import setCss from "./dom/setcss";
 import Class from "./dom/class";
 import getCss from "./dom/getcss";
-export { select, display, setCss, Class, getCss };
+import emailCheck from "./validation/email";
+export { select, display, setCss, Class, getCss, emailCheck };
