@@ -5,4 +5,7 @@ import setCss from "./dom/setcss";
 import Class from "./dom/class";
 import getCss from "./dom/getcss";
 import emailCheck from "./validation/email";
-export { select, display, setCss, Class, getCss, emailCheck };
+import match from "./validation/match";
+import isEmpty from "./validation/empty";
+
+export { select, display, setCss, Class, getCss, emailCheck, match, isEmpty };
