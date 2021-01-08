@@ -2,7 +2,7 @@
 
 **SimpraJs** is a modern open source javascript library written in latest typescript then compiled into browser compatible javascript. It works on all modern browsers.
 
-# Installation
+## Installation
 
 ### Npm install
 
@@ -16,7 +16,7 @@ npm i simprajs
 <script src="https://cdn.jsdelivr.net/npm/simprajs@1.0.2/dist/simpra.min.js"></script>
 ```
 
-# Uses
+## Uses
 
 ### require
 
@@ -28,6 +28,9 @@ var simprajs = require("simprajs")
 
 ```
 <script src="https://cdn.jsdelivr.net/npm/simprajs@1.0.2/dist/simpra.min.js"></script>
+<script>
+console.log(simpra)
+</script>
 ```
 
 ### import

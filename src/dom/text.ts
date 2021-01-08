@@ -1,19 +1,19 @@
 import element_select from "../utils/element_select";
-const html = (
+const text = (
   selector: string | NodeListOf<HTMLElement>,
   value?: string | number
 ): Array<string> | undefined => {
   const elements = element_select(selector);
-  let elementHtmlArray: Array<string> = [];
   if (elements != undefined) {
     if (value == undefined) {
+      const elementTextArray: Array<string> = [];
       elements.forEach((element) => {
-        elementHtmlArray.push(element.innerHTML);
+        elementTextArray.push(element.innerText);
       });
-      return elementHtmlArray;
-    } else if (value != undefined) {
+      return elementTextArray;
+    } else {
       elements.forEach((element) => {
-        element.innerHTML = value.toString();
+        element.innerText = value.toString();
       });
     }
   } else {
@@ -22,4 +22,4 @@ const html = (
     );
   }
 };
-export default html;
+export default text;

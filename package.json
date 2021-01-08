@@ -1,6 +1,6 @@
 {
   "name": "simprajs",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A javascript library for simple practices.",
   "main": "dist/simpra.js",
   "types": "./types/index.d.ts",

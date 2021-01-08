@@ -8,6 +8,9 @@ import emailCheck from "./validation/email";
 import match from "./validation/match";
 import isEmpty from "./validation/empty";
 import html from "./dom/html";
+import text from "./dom/text";
+import resetForm from "./dom/reset";
+import value from "./dom/value";
 
 export {
   select,
@@ -19,4 +22,7 @@ export {
   match,
   isEmpty,
   html,
+  text,
+  resetForm,
+  value,
 };
