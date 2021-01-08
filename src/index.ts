@@ -7,5 +7,16 @@ import getCss from "./dom/getcss";
 import emailCheck from "./validation/email";
 import match from "./validation/match";
 import isEmpty from "./validation/empty";
+import html from "./dom/html";
 
-export { select, display, setCss, Class, getCss, emailCheck, match, isEmpty };
+export {
+  select,
+  display,
+  setCss,
+  Class,
+  getCss,
+  emailCheck,
+  match,
+  isEmpty,
+  html,
+};
