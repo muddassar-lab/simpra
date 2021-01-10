@@ -4,7 +4,7 @@ const storage = (
   variable?: string,
   value?: string | number
 ): number | string | null | undefined => {
-  if (typeof variable == "string") {
+  if (typeof variable == "string" || variable == undefined) {
     if (typeof method == "string") {
       if (methodCheck(method, ["g", "s", "r", "c", "l"])) {
         if (
@@ -18,7 +18,11 @@ const storage = (
             return localStorage.length;
           }
         }
-        if (value == undefined && (method == "g" || method == "r")) {
+        if (
+          value == undefined &&
+          typeof variable == "string" &&
+          (method == "g" || method == "r")
+        ) {
           if (method == "g") {
             return localStorage.getItem(variable);
           } else if (method == "r") {
@@ -38,7 +42,7 @@ const storage = (
     you passed is ${method}`);
     }
   } else {
-    console.error(`passed variable paramter should be string.The variable parameter
+    console.error(`passed variable paramter should be string or undefiend.The variable parameter
     you passed is ${variable}`);
   }
 };
