@@ -11,6 +11,10 @@ import html from "./dom/html";
 import text from "./dom/text";
 import resetForm from "./dom/reset";
 import value from "./dom/value";
+import len from "./helper/len";
+import readyDom from "./helper/ready";
+import json from "./helper/json";
+import storage from "./helper/storage";
 
 export {
   select,
@@ -25,4 +29,8 @@ export {
   text,
   resetForm,
   value,
+  len,
+  readyDom,
+  json,
+  storage,
 };
